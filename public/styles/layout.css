@@ -15,9 +15,51 @@ html {
  */
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  display: flex;
+  color: #f4f1ec;
+  background-color: #201d1d;
   font-size: 24px;
+}
+
+.container.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav {
+  position: fixed;
+  height: 120px;
+  width: 100vw;
+  background: #4056A1;
+  color: #FFFFFF;
+  z-index: 0;
+}
+
+nav > span {
+  z-index: 2;
+}
+
+.container.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  position: fixed;
+  background-image: 'images/profile-hex.png';
+  background-color: #ffc342;
+  color: #545149;
+  z-index: 10;
+}
+
+main {
+  background-color: #201d1d;
+  height: 4000px;
 }
 
 /*
