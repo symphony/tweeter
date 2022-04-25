@@ -1,0 +1,17 @@
+.container.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+header {
+  height: 400px;
+  width: 100%;
+  padding: 0.6em;
+  margin-top: 120px;
+  position: fixed;
+  background-color: #ffc342;
+  background-image: url("images/profile-hex.png");
+  color: #545149;
+  z-index: 10;
+}

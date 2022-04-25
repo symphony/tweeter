@@ -1,0 +1,33 @@
+.container.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  position: fixed;
+  padding: 1.5em;
+  height: 120px;
+  width: 100vw;
+  background: #4056A1;
+  color: #FFFFFF;
+}
+
+nav > span.logo {
+  font-family: Bungee, sans-serif;
+  font-size: 2rem;
+}
+
+nav > span {
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+
+nav > span > div {
+text-align: center;
+}
+
+.red {
+  color: rgb(224, 32, 64);
+}
