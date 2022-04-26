@@ -6,7 +6,7 @@
   width: 100%;
   padding: 0.6em;
   background-color: #e3a30f;
-  background-image: url("/images/gradient-squares.png");
+  background-image: url(/images/gradient-squares.png);
   color: #353d4e;
 }
 

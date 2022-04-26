@@ -46,16 +46,23 @@
     <div><img id="profile-pic" src="/images/profile-hex.png"></div>
     <br>
     <div>
-      <h2>Your Name</h2>
+      <h2>Noodles</h2>
     </div>
   </header>
 
   <main class="flex rounded-bottom">
     <div>
-      <h3>What are you humming about?</h3>
-      <hr>
+      <section class="new-tweet">
+        <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <br>
+          <textarea name="text" id="tweet-text" placeholder="Compose tweet"></textarea>
+          <hr>
+          <button type="submit" class="bungee rounded" id="tweet-button">tweet</button>
+          <output id="character-limit" name="counter" class="counter" for="tweet-text">140</output>
+        </form>
+      </section>
       <div class="main-container">
-        <span class="bungee rounded" id="tweet-button">tweet</span>
         <div class="flex main-card-container">
           <div class="main-card rounded">
             <p>

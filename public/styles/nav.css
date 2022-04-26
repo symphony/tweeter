@@ -23,7 +23,7 @@
   text-align: center;
 }
 
-.fa-angles-down {
+#nav-cta .fa-angles-down {
   animation: action 1s ease-in infinite;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .paused {
-  animation-play-state: paused;
+  animation-play-state: paused; /* will use jquery to pause */
 }
