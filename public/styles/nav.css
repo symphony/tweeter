@@ -1,5 +1,4 @@
-.container.nav {
-  display: flex;
+.flex-container.nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -13,23 +12,16 @@ nav {
   width: 100vw;
   background: #141e35;
   color: #fff9f4;
+  z-index: 10;
   box-shadow: 0 10px 60px 30px rgba(21, 22, 22, 0.245);
 }
 
-#nav-logo {
-  font-family: Bungee, sans-serif;
+nav .logo {
   font-size: 2rem;
 }
 
 #nav-cta {
   font-family: sans-serif;
   font-size: 1.2rem;
-}
-
-nav > span > div {
-text-align: center;
-}
-
-.red {
-  color: rgb(224, 32, 64);
+  text-align: center;
 }

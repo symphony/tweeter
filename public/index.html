@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
 
-    <!-- Import Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <!-- Import Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/c60af2c957.js" crossorigin="anonymous"></script>
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/c60af2c957.js" crossorigin="anonymous"></script>
 
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+</head>
 
-  <body>
-    <nav class="container nav">
-      <span id="nav-logo">tweeter</span>
-      <span>
-        <p id="nav-cta"><strong>Write</strong> a new tweet</p>
-        <div><i class="fa-solid fa-angles-down red"></i></div>
-      </span>
-    </nav>
+<body>
+  <nav class="flex-container nav">
+    <span class="logo bungee">tweeter</span>
+    <span id="nav-cta">
+      <p><strong>Write</strong> a new tweet</p>
+      <i class="fa-solid fa-angles-down red"></i>
+    </span>
+  </nav>
 
-    <header class="container header">
-      <div>
-          <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
+  <header class="flex-container header rounded-bottom">
+    <div><img id="profile-pic" src="/images/profile-hex.png"></div>
+    <br>
+    <div>
+      <h2>Your Name</h2>
+    </div>
   </header>
 
-    <main class="container">
+  <main class="flex-container rounded-bottom">
+    <div>
+      <h3>What are you humming about?</h3>
+      <hr>
+      <div class="main-container">
+        <span class="bungee rounded" id="tweet-button">tweet</span>
+        <div>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem amet illum ea tempore inventore?
+          Sapiente error perferendis consectetur veniam repudiandae iure ratione officiis perspiciatis, recusandae nisi.
+          Exercitationem qui deserunt consectetur!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
 
-
-    </main>
-  </body>
 </html>
