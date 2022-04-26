@@ -12,14 +12,13 @@ html {
 }
 
 body {
-  display: flex;
+  background-color: #0b1212;
   color: #f4f1ec;
-  background-color: #201d1d;
   font-size: 24px;
 }
 
 /* Custom Styling */
 main {
-  background-color: #201d1d;
+  background-color: #192331;
   height: 4000px;
 }

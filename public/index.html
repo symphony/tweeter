@@ -6,6 +6,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Import Google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,20 +20,22 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c60af2c957.js" crossorigin="anonymous"></script>
+
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
     <nav class="container nav">
-      <span class="logo">tweeter</span>
+      <span id="nav-logo">tweeter</span>
       <span>
-        <div><strong>Write</strong> a new tweet</div>
-        <div><i class="fas fa-angle-double-down red">hello?</i></div>
+        <p id="nav-cta"><strong>Write</strong> a new tweet</p>
+        <div><i class="fa-solid fa-angles-down red"></i></div>
       </span>
     </nav>
+
     <header class="container header">
       <div>
           <img src="/images/profile-hex.png">
@@ -43,7 +46,6 @@
       </div>
   </header>
 
-    <!-- Page-specific (main) content here -->
     <main class="container">
 
 
