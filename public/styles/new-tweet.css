@@ -1,12 +1,16 @@
 #text-area {
-  padding: 0.5em;
   background-color: transparent;
-  border: 0;
   color: white;
+  outline: none;
+  min-height: 100px;
+  resize: vertical;
+  border: 0;
+  border-bottom: 3px solid #bebebe
 }
 
 #output-container {
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 #tweet-button {

@@ -25,7 +25,7 @@ hr {
   outline: none;
   clear: both;
   height: .02em;
-  background: rgb(190, 190, 190);
+  background: #bebebe;
   width: 100%;
   margin: 1em 0;
   min-height: 1px;
@@ -62,4 +62,13 @@ main {
 .rounded-bottom {
   border-bottom-left-radius: 0.7em;
   border-bottom-right-radius: 0.7em;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  box-shadow: inset 0px 0px 5px #c1c1c1;
+  transform: translate(1px, 1px);
 }

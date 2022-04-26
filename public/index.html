@@ -6,11 +6,8 @@
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
   <!-- Import Google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 
   <!-- App CSS -->
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
@@ -26,7 +23,7 @@
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://kit.fontawesome.com/c60af2c957.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/c60af2c957.js"></script>
 
 
   <!-- App JS -->
@@ -55,17 +52,16 @@
 
   <main>
     <!-- New tweet field -->
-      <form method="post" action="/tweets/">
-        <div class="flex column new-tweet">
-          <label for="tweet-text">Compose Tweet</label>
+      <form id="tweet-form">
+        <section class="flex column new-tweet">
+          <label class="bungee" for="tweet-text">Compose Tweet</label>
           <br>
           <textarea name="text" id="text-area" placeholder="What are you humming about?"></textarea>
         </div>
-        <hr>
         <div class="flex" id="output-container">
           <button type="submit" class="bungee rounded" id="tweet-button">tweet</button>
-          <output id="character-limit" name="counter" class="counter" for="tweet-text">140</output>
-        </div>
+          <output class="counter bungee" id="character-limit" name="counter" for="tweet-text">140</output>
+        </section>
       </form>
 
     <!-- Main Feed -->

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha /test",
     "start": "node server/index.js",
-    "local": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
+    "dev": "./node_modules/.bin/nodemon --watch server -e js server/index.js"
   },
   "author": "Lighthouse Labs",
   "license": "ISC",
