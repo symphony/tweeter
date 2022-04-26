@@ -20,7 +20,7 @@ body {
 }
 
 /* Global effects */
-.flex-container {
+.flex {
   display: flex;
 }
 
@@ -28,12 +28,12 @@ body {
   font-family: Bungee, sans-serif;
 }
 
-.red {
+.text-red {
   color: rgb(224, 32, 64);
 }
 
 .rounded {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .rounded-bottom {
@@ -44,17 +44,33 @@ body {
 
 /* Main layout */
 main {
-  height: 4000px;
+  height: 3000px; /* to test scrolling */
   width: 90vw;
   margin: 0 auto;
   padding: 80px 0;
 }
 
 .main-container {
-  margin-top: 50px;
+  width: 90%;
+  margin: 50px auto;
 }
 
 #tweet-button {
   background-color: rgb(33, 86, 115);
   padding: 0.1em 0.5em;
+}
+
+.flex.main-card-container {
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: inherit;
+  width: 100%;
+}
+
+.main-card {
+  background-color: #263344;
+  padding: 20px;
+  margin: 20px;
+  width: 40%;
+  min-width: 400px;
 }
