@@ -10,6 +10,9 @@
 }
 
 #tweet-button {
-  background-color: rgb(33, 86, 115);
-  padding: 0.1em 0.5em;
+  font-size: 1.2rem;
+  background-color: rgb(28, 59, 88);
+  padding: 0.5em 1em;
+  color: white;
+  border: 0;
 }
