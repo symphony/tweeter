@@ -4,7 +4,7 @@ https://css-tricks.com/international-box-sizing-awareness-day/
 */
 html {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 *, *:before, *:after {
@@ -17,6 +17,11 @@ body {
   background-color: #192331;
   color: #f4f1ec;
   font-size: 20px;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
 }
 
 hr {
@@ -48,7 +53,7 @@ main {
 }
 
 .bungee {
-  font-family: Bungee, sans-serif;
+  font-family: Bungee;
 }
 
 .text-red {
@@ -69,6 +74,6 @@ button {
 }
 
 button:focus {
-  box-shadow: inset 0px 0px 5px #c1c1c1;
+  box-shadow: inset 1px 1px 2px #0b0f17;
   transform: translate(1px, 1px);
 }

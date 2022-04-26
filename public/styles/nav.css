@@ -3,7 +3,7 @@
   justify-content: space-between;
   position: fixed;
   top: 0;
-  padding: 1.5em;
+  padding: 2em;
   height: 120px;
   width: 100vw;
   background: #141e35;
@@ -17,8 +17,7 @@
 }
 
 #nav-cta {
-  font-family: sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 

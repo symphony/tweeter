@@ -1,17 +1,9 @@
 $(document).ready(()=> {
-  $('#tweet-form').on('submit', (event) => {
-    event.preventDefault();
-    alert('submitted');
-  });
-
-  $('#tweet-button').on('click', ({target}) => {
+  $('#nav-cta').on('click', () => {
     setTimeout(() => {
-      target.blur();
-    }, 200);
-
-
+      $('#text-area').focus();
+    }, 100)
   });
 
-
-
+  // = end =
 });
