@@ -31,9 +31,14 @@ hr {
   min-height: 1px;
 }
 
+
 /* Global effects */
 .flex {
   display: flex;
+}
+
+.column {
+  flex-direction: column;
 }
 
 .bungee {
@@ -61,14 +66,27 @@ main {
   padding: 80px 0;
 }
 
-.main-container {
-  width: 90%;
-  margin: 50px auto;
+/* Compose new tweet */
+#text-area {
+  padding: 1em;
+  background-color: transparent;
+  border: 0;
+  color: white;
+}
+
+#tweet-submit {
+  justify-content: space-between;
 }
 
 #tweet-button {
   background-color: rgb(33, 86, 115);
   padding: 0.1em 0.5em;
+}
+
+/* Main feed */
+.main-container {
+  width: 90%;
+  margin: 50px auto;
 }
 
 .flex.main-card-container {

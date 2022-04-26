@@ -33,6 +33,7 @@
 
 
 <!-- Main Content -->
+
 <body>
   <nav class="flex nav">
     <span class="bungee" id="nav-logo">tweeter</span>
@@ -42,7 +43,7 @@
     </span>
   </nav>
 
-  <header class="flex header rounded-bottom">
+  <header class="flex column header rounded-bottom">
     <div><img id="profile-pic" src="/images/profile-hex.png"></div>
     <br>
     <div>
@@ -50,32 +51,41 @@
     </div>
   </header>
 
-  <main class="flex rounded-bottom">
-    <div>
-      <section class="new-tweet">
-        <form>
-          <label for="tweet-text">What are you humming about?</label>
+  <main>
+    <!-- New tweet field -->
+    <section>
+      <form>
+        <div class="flex column new-tweet">
+          <label for="tweet-text">Compose Tweet</label>
           <br>
-          <textarea name="text" id="tweet-text" placeholder="Compose tweet"></textarea>
-          <hr>
+          <textarea name="tweet-text" id="text-area" placeholder="What are you humming about?"></textarea>
+        </div>
+        <hr>
+        <div class="flex" id="tweet-submit">
           <button type="submit" class="bungee rounded" id="tweet-button">tweet</button>
           <output id="character-limit" name="counter" class="counter" for="tweet-text">140</output>
-        </form>
-      </section>
-      <div class="main-container">
-        <div class="flex main-card-container">
-          <div class="main-card rounded">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eaque nulla id, ad facilis excepturi. Repellendus, ut doloribus. Ad, quam, veniam provident eaque maiores beatae placeat ipsa ducimus totam praesentium exercitationem dignissimos iste, earum cum minus esse dolore harum fuga?
-            </p>
-          </div>
-          <div class="main-card rounded">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, quaerat qui placeat et voluptates dicta est velit architecto doloremque asperiores, cum nostrum, quae pariatur sint laboriosam accusantium culpa eum! Repellendus?</p>
-          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- Main Feed -->
+    <div class="main-container">
+      <div class="flex main-card-container">
+        <div class="main-card rounded">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum eaque nulla id, ad facilis excepturi.
+            Repellendus, ut doloribus. Ad, quam, veniam provident eaque maiores beatae placeat ipsa ducimus totam
+            praesentium exercitationem dignissimos iste, earum cum minus esse dolore harum fuga?
+          </p>
+        </div>
+        <div class="main-card rounded">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, quaerat qui placeat et voluptates dicta
+            est velit architecto doloremque asperiores, cum nostrum, quae pariatur sint laboriosam accusantium culpa
+            eum! Repellendus?</p>
         </div>
       </div>
     </div>
   </main>
-</body>
 
+</body>
 </html>
