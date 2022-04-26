@@ -21,6 +21,8 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/feed.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,20 +55,18 @@
 
   <main>
     <!-- New tweet field -->
-    <section>
-      <form>
+      <form method="post" action="/tweets/">
         <div class="flex column new-tweet">
           <label for="tweet-text">Compose Tweet</label>
           <br>
-          <textarea name="tweet-text" id="text-area" placeholder="What are you humming about?"></textarea>
+          <textarea name="text" id="text-area" placeholder="What are you humming about?"></textarea>
         </div>
         <hr>
-        <div class="flex" id="tweet-submit">
+        <div class="flex" id="output-container">
           <button type="submit" class="bungee rounded" id="tweet-button">tweet</button>
           <output id="character-limit" name="counter" class="counter" for="tweet-text">140</output>
         </div>
       </form>
-    </section>
 
     <!-- Main Feed -->
     <div class="main-container">

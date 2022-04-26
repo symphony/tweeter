@@ -25,6 +25,9 @@ app.use(express.static("public"));
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
+app.post('/tweets/', (req, res) => {
+  res.send(req.body.text)
+});
 
 // == start server ==
 app.listen(PORT, () => {

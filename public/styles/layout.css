@@ -31,6 +31,12 @@ hr {
   min-height: 1px;
 }
 
+main {
+  height: 3000px; /* to test scrolling */
+  width: 90vw;
+  margin: 0 auto;
+  padding: 80px 0;
+}
 
 /* Global effects */
 .flex {
@@ -56,51 +62,4 @@ hr {
 .rounded-bottom {
   border-bottom-left-radius: 0.7em;
   border-bottom-right-radius: 0.7em;
-}
-
-/* Main layout */
-main {
-  height: 3000px; /* to test scrolling */
-  width: 90vw;
-  margin: 0 auto;
-  padding: 80px 0;
-}
-
-/* Compose new tweet */
-#text-area {
-  padding: 1em;
-  background-color: transparent;
-  border: 0;
-  color: white;
-}
-
-#tweet-submit {
-  justify-content: space-between;
-}
-
-#tweet-button {
-  background-color: rgb(33, 86, 115);
-  padding: 0.1em 0.5em;
-}
-
-/* Main feed */
-.main-container {
-  width: 90%;
-  margin: 50px auto;
-}
-
-.flex.main-card-container {
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin: inherit;
-  width: 100%;
-}
-
-.main-card {
-  background-color: #263344;
-  padding: 20px;
-  margin: 20px;
-  width: 40%;
-  min-width: 400px;
-  box-shadow: 0.1em 0.2em 0.3em 0 rgba(27, 31, 35, 0.098);
 }
