@@ -19,6 +19,18 @@ body {
   font-size: 20px;
 }
 
+hr {
+  display: block;
+  border: none;
+  outline: none;
+  clear: both;
+  height: .02em;
+  background: rgb(190, 190, 190);
+  width: 100%;
+  margin: 1em 0;
+  min-height: 1px;
+}
+
 /* Global effects */
 .flex {
   display: flex;
@@ -33,14 +45,13 @@ body {
 }
 
 .rounded {
-  border-radius: 8px;
+  border-radius: 0.4em;
 }
 
 .rounded-bottom {
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0.7em;
+  border-bottom-right-radius: 0.7em;
 }
-
 
 /* Main layout */
 main {
@@ -73,4 +84,5 @@ main {
   margin: 20px;
   width: 40%;
   min-width: 400px;
+  box-shadow: 0.1em 0.2em 0.3em 0 rgba(27, 31, 35, 0.098);
 }

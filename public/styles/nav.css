@@ -22,3 +22,16 @@
   font-size: 1.2rem;
   text-align: center;
 }
+
+.fa-angles-down {
+  animation: action 1s ease-in infinite;
+}
+
+@keyframes action {
+  0%    { transform: translateY(0em); }
+  100%  { transform: translateY(0.3em); }
+}
+
+.paused {
+  animation-play-state: paused;
+}
