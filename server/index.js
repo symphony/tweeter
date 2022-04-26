@@ -26,7 +26,7 @@ app.use(express.static("public"));
 app.use("/tweets", tweetsRoutes);
 
 app.post('/tweets/', (req, res) => {
-  res.send(req.body.text)
+console.log('did it work', req.body.text);
 });
 
 // == start server ==
