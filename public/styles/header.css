@@ -4,7 +4,7 @@
   height: 400px;
   width: 100%;
   padding: 0.6em;
-  background-color: #bf880a;
+  background-color: rgb(255, 213, 123);
   background-image: url(/images/gradient-squares.png);
   color: #353d4e;
 }
