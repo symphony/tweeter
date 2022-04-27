@@ -1,9 +1,7 @@
-$(document).ready(()=> {
+$(document).ready(() => {
   $('#nav-cta').on('click', () => {
     setTimeout(() => {
       $('#text-area').focus();
-    }, 100)
+    }, 10)
   });
-
-  // = end =
 });
