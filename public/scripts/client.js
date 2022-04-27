@@ -1,7 +1,6 @@
 const { distanceInWordsToNow } = dateFns;
 
 // == helpers ==
-
 const createTweetElement = ({user, content, created_at}) => {
   const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
   const htmlStructure =
@@ -43,14 +42,14 @@ const renderTweets = (tweets) => {
 // == page loaded ==
 // =================
 $(document).ready(() => {
-  // Reset button state on click
+  // Reset (any) button state on click
   $('button').on('click', ({target}) => {
     target.blur();
   });
 
   $('#nav-cta').on('click', () => {
-    let url = window.location.href;
-    url = url.split(/[?#]/)[0];
+    // removes extra text in url bar
+    const url = window.location.href.split(/[?#]/)[0];
     setTimeout(() => {
       window.history.pushState({}, null, url);
       $('#text-area').focus();
@@ -61,7 +60,6 @@ $(document).ready(() => {
   // Compose tweet submission
   $('#compose-tweet').submit(function(event) {
     event.preventDefault();
-
     const $input = $('#text-area');
     const $counter = $('#counter');
     const charLimit = 140;
@@ -77,7 +75,7 @@ $(document).ready(() => {
     $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
     if (!contents) return alert("Not subbmitted. No content in input field."); // todo replace with non intrusive alert
 
-    console.log("Tweet submitted succesfully");
+    console.log("Tweet submitted succesfully"); // testing
 
     // will replace ajax request with form contents soon
     $.ajax('/tweets/')
@@ -93,6 +91,7 @@ $(document).ready(() => {
   });
 
 
+  // == initial page load behaviour ==
   // Render store tweets
   $.ajax('/tweets/')
   .then((data) => {

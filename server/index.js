@@ -30,6 +30,11 @@ app.use(express.static("public"));
 // Mount the tweets routes at the "/tweets" path prefix:
 app.use("/tweets", tweetsRoutes);
 
+// 404
+app.get('*', (req, res) => {
+  res.redirect(404, '/');
+});
+
 // == start server ==
 app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);

@@ -1,7 +1,5 @@
-/*
-http://www.paulirish.com/2012/box-sizing-border-box-ftw/
-https://css-tricks.com/international-box-sizing-awareness-day/
-*/
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+https://css-tricks.com/international-box-sizing-awareness-day/ */
 html {
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
@@ -36,9 +34,7 @@ hr {
   min-height: 1px;
 }
 
-
 main {
-  height: 3000px; /* to test scrolling */
   width: 90vw;
   margin: 0 auto;
   padding: 80px 0;
