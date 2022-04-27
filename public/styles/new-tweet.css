@@ -9,7 +9,8 @@
   min-height: 100px;
   resize: vertical;
   border: 0;
-  border-bottom: 3px solid #bebebe
+  border-bottom: 3px solid #bebebe;
+  font-size: 1.5rem;
 }
 
 #output-container {
