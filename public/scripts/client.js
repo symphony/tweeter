@@ -1,7 +1,9 @@
 const { distanceInWordsToNow } = dateFns;
 
-const buildTweetCard = ({user, content, created_at}) => {
-  const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true });
+// == helpers ==
+
+const createTweetElement = ({user, content, created_at}) => {
+  const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
   const htmlStructure =
 `
 <article class="flex column feed-card">
@@ -28,43 +30,76 @@ const buildTweetCard = ({user, content, created_at}) => {
   return htmlStructure;
 };
 
-
 const renderTweets = (tweets) => {
-  let container = '';
+  let tweetContainer = '';
   for (const tweet of tweets) {
-    container += buildTweetCard(tweet);
+    tweetContainer = createTweetElement(tweet) + tweetContainer;
   }
-  return container;
+  return tweetContainer;
 };
 
-$(document).ready(() => {
-  const $input = $('#text-area');
-  const $counter = $('#counter');
-  const maxChar = 140;
 
+// =================
+// == page loaded ==
+// =================
+$(document).ready(() => {
   // Reset button state on click
   $('button').on('click', ({target}) => {
     target.blur();
   });
 
   $('#nav-cta').on('click', () => {
+    let url = window.location.href;
+    url = url.split(/[?#]/)[0];
     setTimeout(() => {
+      window.history.pushState({}, null, url);
       $('#text-area').focus();
     }, 10)
   });
 
-  $('#compose-tweet').submit((event) => {
+
+  // Compose tweet submission
+  $('#compose-tweet').submit(function(event) {
     event.preventDefault();
-    $input.val('');
+
+    const $input = $('#text-area');
+    const $counter = $('#counter');
+    const charLimit = 140;
+
+    const contents = $input.val().trim();
     $input.focus();
-    $counter.val(maxChar);
+
+    // exceeds char limit
+    if (contents.length > charLimit) return alert("Not subbmitted. No content in input field."); // todo replace with non intrusive alert
+
+    // reset input field
+    $input.val('');
+    $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
+    if (!contents) return alert("Not subbmitted. No content in input field."); // todo replace with non intrusive alert
+
+    console.log("Tweet submitted succesfully");
+
+    // will replace ajax request with form contents soon
     $.ajax('/tweets/')
     .then((data) => {
-      $('#feed-container').prepend(renderTweets(data));
+      const newTweet = data.slice(-1)[0]; // using old tweet as template for now
+      newTweet.content.text = contents;
+      $('#feed-container').prepend(createTweetElement(newTweet));
     })
     .catch((error) => {
       alert("Error fetching. See console log.");
       console.log(error);
     });
+  });
+
+
+  // Render store tweets
+  $.ajax('/tweets/')
+  .then((data) => {
+    $('#feed-container').prepend(renderTweets(data));
+  })
+  .catch((error) => {
+    alert("Error fetching. See console log.");
+    console.log(error);
   });
 });

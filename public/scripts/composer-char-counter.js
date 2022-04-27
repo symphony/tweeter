@@ -1,12 +1,12 @@
 $(document).ready(() => {
   const $input = $('#text-area');
   const $counter = $('#counter');
-  const maxChar = 140;
+  const charLimit = 140;
   let charCount = 0;
 
   $input.bind('input propertychange', () => {
-    charCount = $input.val().length;
-    $counter.text(maxChar - charCount);
+    charCount = $input.val().trimStart().length;
+    $counter.text(charLimit - charCount);
     if (charCount >= 100) $counter.addClass('text-orange');
     if (charCount <= 99) $counter.removeClass('text-orange');
     if (charCount >= 141) $counter.addClass('text-red');
