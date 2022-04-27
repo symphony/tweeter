@@ -1,6 +1,6 @@
 const { distanceInWordsToNow } = dateFns;
 
-const buildTweetCard= ({user, content, created_at}) => {
+const buildTweetCard = ({user, content, created_at}) => {
   const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true });
   const htmlStructure =
 `
@@ -28,6 +28,15 @@ const buildTweetCard= ({user, content, created_at}) => {
   return htmlStructure;
 };
 
+
+const renderTweets = (tweets) => {
+  let container = '';
+  for (const tweet of tweets) {
+    container += buildTweetCard(tweet);
+  }
+  return container;
+};
+
 $(document).ready(() => {
   const $input = $('#text-area');
   const $counter = $('#counter');
@@ -51,11 +60,10 @@ $(document).ready(() => {
     $counter.val(maxChar);
     $.ajax('/tweets/')
     .then((data) => {
-      const newTweet = data.slice(-1)[0];
-      $('#feed-container').prepend(buildTweetCard(newTweet));
+      $('#feed-container').prepend(renderTweets(data));
     })
     .catch((error) => {
-      alert("Error fetching");
+      alert("Error fetching. See console log.");
       console.log(error);
     });
   });
