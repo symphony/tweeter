@@ -1,16 +1,16 @@
-.main-container {
+.feed-container {
   width: 90%;
   margin: 50px auto;
 }
 
-.flex.main-card-container {
+.flex.feed-card-container {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: inherit;
   width: 100%;
 }
 
-.main-card {
+.feed-card {
   background-color: #263344;
   padding: 20px;
   margin: 20px;
