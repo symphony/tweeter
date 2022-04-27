@@ -1,4 +1,4 @@
-import { formatDistance, subDays } from 'date-fns'
+import { formatDistance, subDays } from '../date-fns'
 
 const buildTweetCard= ({user, content, created_at}) => {
   const timeAgo = formatDistance(subDays(new Date(created_at), 3), new Date(), { addSuffix: true });
@@ -24,46 +24,33 @@ const buildTweetCard= ({user, content, created_at}) => {
     </div>
 </article>
 `;
-return htmlStructure;
+
+  return htmlStructure;
 };
 
 $(document).ready(() => {
+  const $input = $('#text-area');
+  const $counter = $('#counter');
+  const maxChar = 140;
+
+  // Reset button state on click
+  $('button').on('click', ({target}) => {
+    target.blur();
+  });
+
   $('#nav-cta').on('click', () => {
     setTimeout(() => {
       $('#text-area').focus();
     }, 10)
+  });
 
-    const newTweet = $.ajax('/tweets').slice(-1)[0];
+  alert('working');
+  $('#compose-tweet').submit((event) => {
+    event.preventDefault();
+    $input.val('');
+    $input.focus();
+    $counter.val(maxChar);
+    const newTweet = $.ajax('http://localhost:3000/tweets/').slice(-1)[0];
     $('#feed-container').prepend(buildTweetCard(newTweet))
-
-
   });
 });
-
-$(() => {
-  const { user, content, created_at: timestamp } = { "user": { "name": "Descartes", "avatars": "https://i.imgur.com/nlhLi3I.png", "handle": "@rd" }, "content": { "text": "Je pense , donc je suis" }, "created_at": 1650934142888 };
-});
-
-`<article class="feed-card rounded">
-  <div class="user">
-    <span>
-      <div>
-        <img src="user.avatars" class="avatar"></img>
-        <p class="username">user.name</p>
-      </div>
-      <p class="handle">user.handle</p>
-    </span>
-  </div>
-
-  <div class="content">content.text</div>
-  <div>
-    <span>
-      <p class="timestamp">new Date(timestamp)</p>
-      <div class="socials">
-        <i class="fa-duotone fa-camera-retro"></i>
-        <i class="fa-duotone fa-camera-retro"></i>
-        <i class="fa-duotone fa-camera-retro"></i>
-      </div>
-    </span>
-  </div>
-</article>`

@@ -2,18 +2,8 @@ $(document).ready(() => {
   const $input = $('#text-area');
   const $counter = $('#counter');
   const maxChar = 140;
-
-  $('button').on('click', ({target}) => {
-    target.blur();
-  });
-
-  $('#compose-tweet').on('submit', (event) => {
-    event.preventDefault();
-    $input.val('');
-    $input.focus();
-  });
-
   let charCount = 0;
+
   $input.bind('input propertychange', () => {
     charCount = $input.val().length;
     $counter.text(maxChar - charCount);
