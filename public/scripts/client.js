@@ -1,7 +1,7 @@
-import { formatDistance, subDays } from '../date-fns'
+const { distanceInWordsToNow } = dateFns;
 
 const buildTweetCard= ({user, content, created_at}) => {
-  const timeAgo = formatDistance(subDays(new Date(created_at), 3), new Date(), { addSuffix: true });
+  const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true });
   const htmlStructure =
 `
 <article class="flex column feed-card">
@@ -44,13 +44,19 @@ $(document).ready(() => {
     }, 10)
   });
 
-  alert('working');
   $('#compose-tweet').submit((event) => {
     event.preventDefault();
     $input.val('');
     $input.focus();
     $counter.val(maxChar);
-    const newTweet = $.ajax('http://localhost:3000/tweets/').slice(-1)[0];
-    $('#feed-container').prepend(buildTweetCard(newTweet))
+    $.ajax('/tweets/')
+    .then((data) => {
+      const newTweet = data.slice(-1)[0];
+      $('#feed-container').prepend(buildTweetCard(newTweet));
+    })
+    .catch((error) => {
+      alert("Error fetching");
+      console.log(error);
+    });
   });
 });
