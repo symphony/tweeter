@@ -3,7 +3,7 @@ $(document).ready(() => {
   const charLimit = 140;
   let charCount = 0;
 
-  $('#text-area').bind('input propertychange', function() {
+  $('#text-area').on('input propertychange', function() {
     charCount = $(this).val().trimStart().length;
     $counter.text(charLimit - charCount);
     if (charCount >= 100) $counter.addClass('text-orange');

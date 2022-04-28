@@ -58,30 +58,31 @@ $(document).ready(() => {
 
 
   // Compose tweet submission
-  $('#compose-tweet').submit(function(event) {
+  $('#compose-tweet').submit((event) => {
     event.preventDefault();
-    const $input = $('#text-area');
+    const $textarea = $('#text-area');
     const $counter = $('#counter');
     const charLimit = 140;
+    const textSerialized = $textarea.serialize();
+    const textPlain = $textarea.val().trim();
+    $textarea.focus();
 
-    const contents = $input.val().trim();
-    $input.focus();
-
-    // exceeds char limit
-    if (contents.length > charLimit) return alert("Not subbmitted. No content in input field."); // todo replace with non intrusive alert
+    // errors - exceeds char limit
+    if (textPlain.length > charLimit) return alert("Not submitted. No content in input field."); // todo replace with non intrusive alert
 
     // reset input field
-    $input.val('');
+    $textarea.val('');
     $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
-    if (!contents) return alert("Not subbmitted. No content in input field."); // todo replace with non intrusive alert
+    if (!textPlain) return;
 
-    console.log("Tweet submitted succesfully"); // testing
+    // success
+    console.log("Tweet submitted succesfully", "\nencoded:", textSerialized, "\nplain:", textPlain); // for testing
 
     // will replace ajax request with form contents soon
     $.ajax('/tweets/')
     .then((data) => {
       const newTweet = data.slice(-1)[0]; // using old tweet as template for now
-      newTweet.content.text = contents;
+      newTweet.content.text = textPlain;
       $('#feed-container').prepend(createTweetElement(newTweet));
     })
     .catch((error) => {
