@@ -51,11 +51,11 @@
   </header>
 
   <main>
-    <div class="flex" id="alert-container">
-      <div class='alert rounded' role='alert'>
-        <span class='alert-text'>This is an warning alert</span>
-        <button class="alert-close" data-dismiss="alert">
-        <span aria-hidden="true"><i class="fas fa-times-circle alert-close"></i></span>
+    <div class="slide-up" id="alert-box">
+      <div class='flex alert rounded'>
+        <div class='alert-text'>This is an warning alert</div>
+        <button class="alert-close">
+          <div><i class="fas fa-times-circle"></i></div>
         </button>
       </div>
     </div>
@@ -64,7 +64,7 @@
         <section class="flex column new-tweet">
           <label class="bungee" for="tweet-text">Compose Tweet</label>
           <br>
-          <textarea name="text" id="text-area" placeholder="What are you humming about?" required rows="6"></textarea>
+          <textarea name="text" id="text-area" placeholder="What are you humming about?" rows="6"></textarea>
         </div>
         <div class="flex" id="output-container">
           <button type="submit" class="bungee rounded" id="tweet-button">tweet</button>

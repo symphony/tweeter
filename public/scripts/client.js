@@ -1,6 +1,13 @@
 const { distanceInWordsToNow } = dateFns;
 
 // == helpers ==
+const safeText = (text) => {
+  const safe = document.createElement("div");
+  safe.appendChild(document.createTextNode(text));
+  console.log('safe', safe);
+  return safe.innerHTML;
+};
+
 const createTweetElement = ({user, content, created_at}) => {
   const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
   const htmlStructure = // need to create escape function for xss vulnerabilities
@@ -9,12 +16,12 @@ const createTweetElement = ({user, content, created_at}) => {
   <header class="flex user-info">
     <div class="flex user-avatar">
       <img src="${user.avatars}" class="avatar"></img>
-      <span class="username">${user.name}</span>
+      <span class="username">${safeText(user.name)}</span>
     </div>
-      <span class="handle"><strong>${user.handle}</strong></span>
+      <span class="handle"><strong>${safeText(user.handle)}</strong></span>
   </header>
 
-  <span class="tweet-content">${content.text}</span>
+  <span class="tweet-content">${safeText(content.text)}</span>
     <div class="flex footer">
       <span class="timestamp">${timeAgo}</span>
       <span class="socials">
@@ -25,8 +32,6 @@ const createTweetElement = ({user, content, created_at}) => {
     </div>
 </article>
 `;
-
-  if (htmlStructure.includes('script>')) throw
   return htmlStructure;
 };
 
@@ -63,7 +68,14 @@ const submitTweet = (textSerialized, loadTweets) => {
     });
 };
 
-
+const showAlert = (message) => {
+  const $alert = $('#alert-box');
+  $alert.children('.alert').children('.alert-text').text(message);
+  $alert.slideDown();
+  setTimeout(() => {
+    $('#alert-box').slideUp();
+  }, 10000);
+};
 
 // =================
 // == page loaded ==
@@ -71,7 +83,6 @@ const submitTweet = (textSerialized, loadTweets) => {
 $(document).ready(() => {
   // Reset (any) button state on click
   $('button').on('click', ({target}) => {
-    console.log('clicked');
     target.blur();
   });
 
@@ -81,11 +92,11 @@ $(document).ready(() => {
     setTimeout(() => {
       window.history.pushState({}, null, url);
       $('#text-area').focus();
-    }, 10)
+    }, 6000)
   });
 
   $('.alert-close').click(function() {
-    $(this).parent().addClass('closed');
+    $(this).parent().parent().slideUp();
   });
 
   // Compose tweet submission
@@ -99,11 +110,11 @@ $(document).ready(() => {
     $textarea.focus();
 
     // form validation
-    if (textPlain.length > charLimit) return alert("Not submitted. No content in input field."); // todo replace with non intrusive alert
+    if (textPlain.length > charLimit) return showAlert("Tweet exceeds character limit");
     // reset input field
     $textarea.val('');
     $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
-    if (!textPlain) return;
+    if (!textPlain) return showAlert("Tweet cannot be empty");
 
     // success
     console.log("Tweet submitted succesfully", "\nserialized:", textSerialized, "\nplain:", textPlain); // for testing
@@ -113,6 +124,7 @@ $(document).ready(() => {
   });
 
   // == initial page load behaviour ==
+  $('#alert-box').slideUp(0);
   loadTweets();
 });
 

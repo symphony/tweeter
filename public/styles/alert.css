@@ -1,32 +1,40 @@
-#alert-container {
+#alert-box {
   margin: 0 auto;
-  width: 50%;
+  min-width: 40%;
+  max-width: 20vw;
 }
 
 .alert {
+  min-height: 10vw;
+  max-height: 300px;
+  text-align: center;
   background-color: #e3d3ce;
   margin: inherit;
   margin-bottom: 1rem;
   padding: .5rem;
   color: black;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .icon {
   margin: 0 1rem;
 }
 
-.text {
+.alert-text {
   display: inline-block;
-  font-size: 1.125rem;
+  font-size: 1.4em;
+  padding: 0.4rem 2rem;
 }
 
 .alert-close {
-  float: right;
-  padding: .75rem 1.75rem;
+  position: absolute;
+  right: -1vw;
+  padding: .75em 1.75em;
   background-color: transparent;
-  color: rgb(44, 96, 192);
-  border: 0;
-  cursor: pointer;
+  color: rgb(19, 51, 85);
+  border: none;
+  outline: none;
 }
 
 .closed {
