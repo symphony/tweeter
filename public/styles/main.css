@@ -34,6 +34,11 @@ hr {
   min-height: 1px;
 }
 
+button {
+  border: 0;
+  background-color: transparent;
+}
+
 main {
   width: 90vw;
   margin: 0 auto;

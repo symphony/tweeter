@@ -3,7 +3,7 @@ const { distanceInWordsToNow } = dateFns;
 // == helpers ==
 const createTweetElement = ({user, content, created_at}) => {
   const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
-  const htmlStructure =
+  const htmlStructure = // need to create escape function for xss vulnerabilities
 `
 <article class="flex column feed-card">
   <header class="flex user-info">
@@ -26,14 +26,43 @@ const createTweetElement = ({user, content, created_at}) => {
 </article>
 `;
 
+  if (htmlStructure.includes('script>')) throw
   return htmlStructure;
 };
 
 const renderTweets = (tweets) => {
+  $('#feed-container').html('');
   for (const tweet of tweets) {
     $('#feed-container').prepend(createTweetElement(tweet));
   }
 };
+
+const loadTweets = () => {
+  $.ajax('/tweets')
+  .then((data) => {
+    renderTweets(data);
+  })
+  .catch((error) => {
+    alert("Error fetching. See console log.");
+    console.log(error);
+  });
+}
+
+const submitTweet = (textSerialized, loadTweets) => {
+  $.ajax({
+    url: '/tweets',
+    method: 'post',
+    data: textSerialized
+  })
+    .then((data) => {
+      loadTweets();
+    })
+    .catch((error) => {
+      alert("Error fetching. See console log.");
+      console.log(error);
+    });
+};
+
 
 
 // =================
@@ -54,6 +83,9 @@ $(document).ready(() => {
     }, 10)
   });
 
+  $('.alert-close').click(function() {
+    $(this).parent().addClass('closed');
+  });
 
   // Compose tweet submission
   $('#compose-tweet').submit((event) => {
@@ -77,31 +109,11 @@ $(document).ready(() => {
     // success
     console.log("Tweet submitted succesfully", "\nserialized:", textSerialized, "\nplain:", textPlain); // for testing
 
-    // will replace ajax request with form contents soon
-    $.ajax({
-      url: '/tweets',
-      method: 'post',
-      data: textSerialized
-    })
-    .then((data) => {
-      console.log('returned data', data);
-      // renderTweets(data);
-    })
-    .catch((error) => {
-      alert("Error fetching. See console log.");
-      console.log(error);
-    });
+    // post request
+    submitTweet(textSerialized, loadTweets);
   });
-
 
   // == initial page load behaviour ==
-  // Render store tweets
-  $.ajax('/tweets/')
-  .then((data) => {
-    renderTweets(data);
-  })
-  .catch((error) => {
-    alert("Error fetching. See console log.");
-    console.log(error);
-  });
+  loadTweets();
 });
+
