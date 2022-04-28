@@ -20,11 +20,11 @@
   font-size: 1.125rem;
 }
 
-button {
+.alert-close {
   float: right;
   padding: .75rem 1.75rem;
   background-color: transparent;
-  color: rgb(10, 38, 91);
+  color: rgb(44, 96, 192);
   border: 0;
   cursor: pointer;
 }

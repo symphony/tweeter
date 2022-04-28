@@ -71,6 +71,7 @@ const submitTweet = (textSerialized, loadTweets) => {
 $(document).ready(() => {
   // Reset (any) button state on click
   $('button').on('click', ({target}) => {
+    console.log('clicked');
     target.blur();
   });
 
@@ -96,8 +97,6 @@ $(document).ready(() => {
     const textSerialized = $textarea.serialize();
     const textPlain = $textarea.val().trim();
     $textarea.focus();
-    console.log('trimmed?', textSerialized.replace(/%20+/g, '%20'));
-
 
     // form validation
     if (textPlain.length > charLimit) return alert("Not submitted. No content in input field."); // todo replace with non intrusive alert

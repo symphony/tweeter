@@ -35,8 +35,9 @@ hr {
 }
 
 button {
-  border: 0;
+  border: none;
   background-color: transparent;
+  outline: none;
 }
 
 main {
