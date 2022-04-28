@@ -66,10 +66,11 @@ $(document).ready(() => {
     const textSerialized = $textarea.serialize();
     const textPlain = $textarea.val().trim();
     $textarea.focus();
+    console.log('trimmed?', textSerialized.replace(/%20+/g, '%20'));
 
-    // errors - exceeds char limit
+
+    // form validation
     if (textPlain.length > charLimit) return alert("Not submitted. No content in input field."); // todo replace with non intrusive alert
-
     // reset input field
     $textarea.val('');
     $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
@@ -79,11 +80,17 @@ $(document).ready(() => {
     console.log("Tweet submitted succesfully", "\nencoded:", textSerialized, "\nplain:", textPlain); // for testing
 
     // will replace ajax request with form contents soon
-    $.ajax('/tweets/')
+    $.ajax({
+      url: '/tweets/',
+      method: 'post',
+      type: 'xhr',
+      data: textSerialized
+    })
     .then((data) => {
-      const newTweet = data.slice(-1)[0]; // using old tweet as template for now
-      newTweet.content.text = textPlain;
-      $('#feed-container').prepend(createTweetElement(newTweet));
+      console.log('returned', data);
+      // const newTweet = data.slice(-1)[0]; // using old tweet as template for now
+      // newTweet.content.text = textPlain;
+      $('#feed-container').prepend(createTweetElement(data));
     })
     .catch((error) => {
       alert("Error fetching. See console log.");

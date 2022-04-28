@@ -21,7 +21,7 @@
   text-align: center;
 }
 
-#nav-cta .fa-angles-down {
+#nav-cta > .fa-angles-down {
   animation: action 1s ease-in infinite;
 }
 
