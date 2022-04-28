@@ -106,7 +106,7 @@ $(document).ready(() => {
     const $counter = $('#counter');
     const charLimit = 140;
     const textSerialized = $textarea.serialize();
-    const textPlain = $textarea.val().trim();
+    const textPlain = $textarea.val().trimStart(); // we'll ignore leading whitespace, but not trailing
     $textarea.focus();
 
     // form validation
@@ -124,7 +124,5 @@ $(document).ready(() => {
   });
 
   // == initial page load behaviour ==
-  $('#alert-box').slideUp(0);
   loadTweets();
 });
-

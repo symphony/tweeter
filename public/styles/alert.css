@@ -5,7 +5,8 @@
 }
 
 .alert {
-  min-height: 10vw;
+  height: 8vw;
+  min-height: 80px;
   max-height: 300px;
   text-align: center;
   background-color: #e3d3ce;
@@ -23,7 +24,8 @@
 
 .alert-text {
   display: inline-block;
-  font-size: 1.4em;
+  font-size:calc(14px + 1vw);
+  font-weight: 400;
   padding: 0.4rem 2rem;
 }
 

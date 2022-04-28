@@ -10,6 +10,7 @@
   padding: 20px;
   margin: 100px auto 0;
   width: 90%;
+  max-width: 1600px;
   min-width: 600px;
   min-height: 320px;
   border: 4px solid rgb(28, 26, 32);

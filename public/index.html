@@ -51,14 +51,7 @@
   </header>
 
   <main>
-    <div class="slide-up" id="alert-box">
-      <div class='flex alert rounded'>
-        <div class='alert-text'>This is an warning alert</div>
-        <button class="alert-close">
-          <div><i class="fas fa-times-circle"></i></div>
-        </button>
-      </div>
-    </div>
+
     <!-- New tweet field -->
       <form id="compose-tweet">
         <section class="flex column new-tweet">
@@ -71,6 +64,15 @@
           <output class="counter bungee" id="counter">140</output>
         </section>
       </form>
+
+      <div class="closed" id="alert-box">
+        <div class='flex alert rounded'>
+          <div class='alert-text'>This is an warning alert</div>
+          <button class="alert-close">
+            <div><i class="fas fa-times-circle"></i></div>
+          </button>
+        </div>
+      </div>
 
     <!-- Main Feed -->
       <section class="flex column" id="feed-container">

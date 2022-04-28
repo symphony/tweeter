@@ -41,6 +41,8 @@ button {
 }
 
 main {
+  min-width: 320px;
+  max-width: 2200px;
   width: 90vw;
   margin: 0 auto;
   padding: 80px 0;
