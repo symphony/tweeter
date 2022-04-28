@@ -1,6 +1,4 @@
 #feed-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 90%;
   margin: inherit;
@@ -51,7 +49,7 @@ span.username {
   cursor: pointer;
 }
 
-.flex .feed-card {
+.feed-card {
   justify-content: space-evenly;
 }
 

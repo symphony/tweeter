@@ -30,11 +30,9 @@ const createTweetElement = ({user, content, created_at}) => {
 };
 
 const renderTweets = (tweets) => {
-  let tweetContainer = '';
   for (const tweet of tweets) {
-    tweetContainer = createTweetElement(tweet) + tweetContainer;
+    $('#feed-container').prepend(createTweetElement(tweet));
   }
-  return tweetContainer;
 };
 
 
@@ -77,20 +75,17 @@ $(document).ready(() => {
     if (!textPlain) return;
 
     // success
-    console.log("Tweet submitted succesfully", "\nencoded:", textSerialized, "\nplain:", textPlain); // for testing
+    console.log("Tweet submitted succesfully", "\nserialized:", textSerialized, "\nplain:", textPlain); // for testing
 
     // will replace ajax request with form contents soon
     $.ajax({
-      url: '/tweets/',
+      url: '/tweets',
       method: 'post',
-      type: 'xhr',
       data: textSerialized
     })
     .then((data) => {
-      console.log('returned', data);
-      // const newTweet = data.slice(-1)[0]; // using old tweet as template for now
-      // newTweet.content.text = textPlain;
-      $('#feed-container').prepend(createTweetElement(data));
+      console.log('returned data', data);
+      // renderTweets(data);
     })
     .catch((error) => {
       alert("Error fetching. See console log.");
@@ -103,7 +98,7 @@ $(document).ready(() => {
   // Render store tweets
   $.ajax('/tweets/')
   .then((data) => {
-    $('#feed-container').prepend(renderTweets(data));
+    renderTweets(data);
   })
   .catch((error) => {
     alert("Error fetching. See console log.");
