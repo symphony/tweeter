@@ -11,17 +11,16 @@ const createTweetElement = ({user, content, created_at}) => {
   const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
   const htmlStructure = // need to create escape function for xss vulnerabilities
 `
-<article class="flex column feed-card">
-  <header class="flex user-info">
-    <div class="flex user-avatar">
-      <img src="${user.avatars}" class="avatar"></img>
-      <span class="username">${safeText(user.name)}</span>
-    </div>
-      <span class="handle"><strong>${safeText(user.handle)}</strong></span>
+<article class="flex column tweet">
+  <header class="flex">
+    <span class="flex">
+      <img src="${user.avatars}"></img>
+      <span class=>${safeText(user.name)}</span>
+    </span>
+    <span><strong>${safeText(user.handle)}</strong></span>
   </header>
-
-  <span class="tweet-content">${safeText(content.text)}</span>
-    <footer class="flex footer">
+  <p>${safeText(content.text)}</p>
+    <footer class="flex">
       <span class="timestamp">${timeAgo}</span>
       <span class="socials">
         <i class="social fa-solid fa-flag"></i>
