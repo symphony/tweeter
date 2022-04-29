@@ -21,14 +21,14 @@ const createTweetElement = ({user, content, created_at}) => {
   </header>
 
   <span class="tweet-content">${safeText(content.text)}</span>
-    <div class="flex footer">
+    <footer class="flex footer">
       <span class="timestamp">${timeAgo}</span>
       <span class="socials">
         <i class="social fa-solid fa-flag"></i>
         <i class="social fa-solid fa-retweet"></i>
         <i class="social fa-solid fa-heart"></i>
       </span>
-    </div>
+    </footer>
 </article>
 `;
   return htmlStructure;
@@ -98,17 +98,17 @@ $(document).ready(() => {
   $('#compose-tweet').submit(function(event) {
     event.preventDefault();
     const $textarea = $(this).children('section').children('textarea');
-    const $counter = $(this).children('div').children('output');
-    const charLimit = 140;
+    const $counter = $(this).children('section').children('footer').children('output');
     const textSerialized = $textarea.serialize();
     const textPlain = $textarea.val().trimStart(); // we'll ignore leading whitespace, but not trailing
+    const charLimit = 140;
     $textarea.focus();
 
     // form validation
     if (textPlain.length > charLimit) return showAlert("Tweet exceeds character limit");
     // reset input field
     $textarea.val('');
-    $counter.removeClass('text-orange').removeClass('text-red').val(charLimit);
+    $counter.removeClass('text-orange').removeClass('text-red').text(charLimit);
     if (!textPlain) return showAlert("Tweet cannot be empty");
 
     // success
