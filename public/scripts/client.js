@@ -42,7 +42,7 @@ const renderTweets = (tweets) => {
 };
 
 const loadTweets = () => {
-  $.ajax('/tweets')
+  $.get('/tweets')
   .then((data) => {
     renderTweets(data);
   })
@@ -50,7 +50,7 @@ const loadTweets = () => {
     alert("Error fetching. See console log.");
     console.log(error);
   });
-}
+};
 
 const submitTweet = (textSerialized, loadTweets) => {
   $.post('/tweets', textSerialized)
