@@ -4,7 +4,6 @@ const { distanceInWordsToNow } = dateFns;
 const safeText = (text) => {
   const safe = document.createElement("div");
   safe.appendChild(document.createTextNode(text));
-  console.log('safe', safe);
   return safe.innerHTML;
 };
 
@@ -117,9 +116,6 @@ $(document).ready(() => {
     if (!textPlain) return showAlert("Tweet cannot be empty");
 
     // success
-    console.log("Tweet submitted succesfully", "\nserialized:", textSerialized, "\nplain:", textPlain); // for testing
-
-    // post request
     submitTweet(textSerialized, loadTweets);
   });
 
