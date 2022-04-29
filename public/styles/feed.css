@@ -38,7 +38,7 @@
   border-bottom: 4px solid rgb(49, 60, 72);
   font-weight: 600;
   padding: 1em 0.6em;
-  font-size:calc(14px + 0.7vw);
+  font-size:calc(18px + 0.5vw);
   word-break: break-word;
 }
 
