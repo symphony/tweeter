@@ -5,15 +5,6 @@ Tweeter is a simple, single-page Twitter clone.
 
 <sub>Disclaimer - This app was built for educational purposes only. All data is only stored locally and lost about stopping the server.</sub>
 
-## Getting Started
-
-1. Clone your repository onto your local device.  
-`git clone git@github.com:symphony/tinyapp.git && cd tweeter`  
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm start` command.
-4. Go to <http://localhost:3000/> in your browser.
-
-
 ## Features
 
 * `Write a tweet`
@@ -21,7 +12,7 @@ Tweeter is a simple, single-page Twitter clone.
 * `Self-Reloading Feed`
 * `Responsive Design`
 
-## Usage
+## Getting Started
 
 **Clone or Download the Project**
 

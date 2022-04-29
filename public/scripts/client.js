@@ -53,11 +53,7 @@ const loadTweets = () => {
 }
 
 const submitTweet = (textSerialized, loadTweets) => {
-  $.ajax({
-    url: '/tweets',
-    method: 'post',
-    data: textSerialized
-  })
+  $.post('/tweets', textSerialized)
     .then((data) => {
       loadTweets();
     })
@@ -72,7 +68,7 @@ const showAlert = (message) => {
   $alert.children('.alert').children('.alert-text').text(message);
   $alert.slideDown();
   setTimeout(() => {
-    $('#alert-box').slideUp();
+    $alert.slideUp();
   }, 6000);
 };
 
@@ -99,10 +95,10 @@ $(document).ready(() => {
   });
 
   // Compose tweet submission
-  $('#compose-tweet').submit((event) => {
+  $('#compose-tweet').submit(function(event) {
     event.preventDefault();
-    const $textarea = $('#text-area');
-    const $counter = $('#counter');
+    const $textarea = $(this).children('section').children('textarea');
+    const $counter = $(this).children('div').children('output');
     const charLimit = 140;
     const textSerialized = $textarea.serialize();
     const textPlain = $textarea.val().trimStart(); // we'll ignore leading whitespace, but not trailing
@@ -122,3 +118,7 @@ $(document).ready(() => {
   // == initial page load behaviour ==
   loadTweets();
 });
+
+
+
+$(this).parents('div').parents('div').siblings('nav').children('div')
