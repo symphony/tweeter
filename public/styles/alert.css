@@ -12,7 +12,7 @@
   background-color: #e3d3ce;
   margin: inherit;
   margin-bottom: 1rem;
-  padding: .5rem;
+  padding: .4rem;
   color: black;
   align-items: center;
   justify-content: space-evenly;
@@ -24,8 +24,8 @@
 
 .alert-text {
   display: inline-block;
-  font-size:calc(14px + 1vw);
-  font-weight: 400;
+  font-size:calc(16px + 0.8vw);
+  font-weight: 500;
   padding: 0.4rem 2rem;
 }
 

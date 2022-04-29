@@ -11,7 +11,7 @@
   margin: 100px auto 0;
   width: 90%;
   max-width: 1600px;
-  min-width: 600px;
+  min-width: 400px;
   min-height: 320px;
   border: 4px solid rgb(28, 26, 32);
   align-content: space-between;
@@ -50,9 +50,7 @@ span.username {
   cursor: pointer;
 }
 
-.feed-card {
-  justify-content: space-evenly;
-}
+
 
 .flex.footer {
   justify-content: space-between;

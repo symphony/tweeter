@@ -13,7 +13,6 @@
   margin: 0;
 }
 
-
 #nav-logo {
   font-size: 2rem;
 }
@@ -23,7 +22,7 @@
   text-align: center;
 }
 
-#nav-cta > .fa-angles-down {
+#nav-cta .fa-angles-down {
   animation: action 1s ease-in infinite;
 }
 

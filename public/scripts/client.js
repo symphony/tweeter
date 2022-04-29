@@ -74,7 +74,7 @@ const showAlert = (message) => {
   $alert.slideDown();
   setTimeout(() => {
     $('#alert-box').slideUp();
-  }, 10000);
+  }, 6000);
 };
 
 // =================
@@ -90,9 +90,9 @@ $(document).ready(() => {
     // removes extra text in url bar
     const url = window.location.href.split(/[?#]/)[0];
     setTimeout(() => {
-      window.history.pushState({}, null, url);
       $('#text-area').focus();
-    }, 6000)
+      window.history.pushState({}, null, url);
+    }, 10)
   });
 
   $('.alert-close').click(function() {
