@@ -1,0 +1,33 @@
+@media only screen and (min-width: 1024px) {
+  body {
+    top: 120px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .flex.nav {
+    position: fixed;
+    background-color: #141e35;
+    box-shadow: 0 10px 60px 30px rgba(21, 22, 22, 0.245);
+  }
+
+  header.header {
+    border-radius: 0.7em;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    max-width: 400px;
+    margin: 2em;
+  }
+
+  main {
+    flex-grow: 2;
+    margin: 2em;
+    padding-top: 0;
+  }
+
+  #compose-tweet {
+    margin-top: 0;
+    scroll-margin-top: 240px;
+  }
+}

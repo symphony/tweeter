@@ -1,16 +1,18 @@
 .flex.nav {
   align-items: center;
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
   top: 0;
   padding: 2em;
   height: 120px;
   width: 100vw;
-  background: #141e35;
   color: #fff9f4;
   z-index: 10;
-  box-shadow: 0 10px 60px 30px rgba(21, 22, 22, 0.245);
+  background-color: transparent;
+  box-shadow: none;
+  margin: 0;
 }
+
 
 #nav-logo {
   font-size: 2rem;
@@ -28,8 +30,4 @@
 @keyframes action {
   0%    { transform: translateY(0em); }
   100%  { transform: translateY(0.3em); }
-}
-
-.paused {
-  animation-play-state: paused; /* will use jquery to pause */
 }

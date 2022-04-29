@@ -1,15 +1,16 @@
 header.header {
-  align-items: center;
-  justify-content: center;
   height: 400px;
   width: 100%;
   padding: 0.6em;
   background-color: rgb(255, 213, 123);
   background-image: url(/images/gradient-squares.png);
   color: #353d4e;
+  border-radius: 0 0 0.7em 0.7em;
+  align-items: center;
+  justify-content: center;
 }
 
 #profile-pic {
-  max-width: 220px;
+  max-width: 180px;
   z-index: 5;
 }
