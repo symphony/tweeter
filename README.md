@@ -14,7 +14,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 ## Getting Started
 
-**Clone or Download the Project**
+**Download or Clone the Project in Your Terminal**
 
 `git clone git@github.com:symphony/tweeter.git && cd tweeter`
 
@@ -26,7 +26,7 @@ Tweeter is a simple, single-page Twitter clone.
 
 `npm start`
 
-**Visit Tweeter Your Browser:**
+**Visit Tweeter in Your Browser:**
 
 `http://localhost:3000` (default port is 3000)
 
