@@ -17,12 +17,12 @@
     justify-content: center;
     flex-grow: 1;
     max-width: 400px;
-    margin: 2em;
+    margin: 3rem;
   }
 
   main {
     flex-grow: 2;
-    margin: 2em;
+    margin: 3rem;
     padding-top: 0;
   }
 
