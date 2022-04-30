@@ -1,8 +1,9 @@
 (() => {
   $(document).ready(() => {
+    // == events ==
     // Reset (any) button state on click
-    $('button').on('click', ({target}) => {
-      target.blur();
+    $('button').on('click', function() {
+      $(this).blur();
     });
 
     $('#nav-cta').on('click', goToComposeTweet);
