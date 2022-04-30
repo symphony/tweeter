@@ -1,6 +1,4 @@
 (() => {
-  const { distanceInWordsToNow } = dateFns;
-
   $(document).ready(() => {
     // Reset (any) button state on click
     $('button').on('click', ({target}) => {
@@ -70,7 +68,7 @@
   };
 
   const createTweetElement = ({user, content, created_at}) => {
-    const timeAgo = distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
+    const timeAgo = dateFns.distanceInWordsToNow(new Date(created_at), new Date(), { addSuffix: true }) + ' ago';
     const htmlStructure =
   `
   <article class="flex column tweet">
