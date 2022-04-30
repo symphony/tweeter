@@ -8,7 +8,7 @@
 
     $('#nav-cta').on('click', goToComposeTweet);
 
-    $('.alert-close').click(function() {
+    $('.alert-close').on('click', function() {
       $(this).closest('#alert-box').slideUp();
     });
 
@@ -33,7 +33,7 @@
 
     // form validation
     if (textPlain.length > charLimit) return showAlert("Tweet exceeds character limit");
-    // reset input field
+    // reset input form
     $textarea.val('');
     $counter.removeClass('text-orange text-red').text(charLimit);
     if (!textPlain) return showAlert("Tweet cannot be empty");
@@ -58,7 +58,7 @@
       $('#text-area').focus();
       window.history.pushState({}, null, url);
     }, 10)
-  }
+  };
 
   const safeText = (text) => {
     const safe = document.createElement("div");
