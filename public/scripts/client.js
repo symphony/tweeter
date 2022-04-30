@@ -8,7 +8,7 @@
     $('#nav-cta').on('click', goToComposeTweet);
 
     $('.alert-close').click(function() {
-      $(this).parent().parent().slideUp();
+      $(this).closest('#alert-box').slideUp();
     });
 
     $('#compose-tweet').on('submit', onSubmit);
@@ -31,13 +31,11 @@
     $textarea.focus();
 
     // form validation
-    if (textPlain.length > charLimit)
-      return showAlert("Tweet exceeds character limit");
+    if (textPlain.length > charLimit) return showAlert("Tweet exceeds character limit");
     // reset input field
     $textarea.val('');
     $counter.removeClass('text-orange text-red').text(charLimit);
-    if (!textPlain)
-      return showAlert("Tweet cannot be empty");
+    if (!textPlain) return showAlert("Tweet cannot be empty");
 
     // success
     submitTweet(textSerialized, loadTweets);
@@ -94,9 +92,10 @@
   };
 
   const renderTweets = (tweets) => {
-    $('#feed-container').html('');
+    const $feedContainer = $('#feed-container');
+    $feedContainer.html('');
     for (const tweet of tweets) {
-      $('#feed-container').prepend(createTweetElement(tweet));
+      $feedContainer.prepend(createTweetElement(tweet));
     }
   };
 
@@ -113,7 +112,7 @@
 
   const showAlert = (message) => {
     const $alert = $('#alert-box');
-    $alert.children('.alert').children('.alert-text').text(message);
+    $alert.find('.alert-text').text(message);
     $alert.slideDown();
     setTimeout(() => {
       $alert.slideUp();
