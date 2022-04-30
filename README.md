@@ -36,16 +36,19 @@ Use hotkey `CTRL + C` in the terminal (see below for more options)
 
 **Uninstall**
 
-To uninstall, simply delete the project folder `/tweeter/` from your computer.
+To uninstall, simply delete the project folder `tweeter/` from your computer.
 
 ---
-
+#### Tweeter Mobile  
 ![Screenshot of Tweeter Mobile](docs/tweet1.png?raw=true "Tweeter Mobile")
 
+#### Mobile Feed  
 ![Screenshot of Mobile Feed](docs/tweet2.png?raw=true=x400 "Mobile Feed")
 
+#### Desktop View  
 ![Screenshot of Desktop View](docs/tweet3.png?raw=true=400 "Desktop View")
 
+#### Alert Box  
 ![Screenshot of Alert Box](docs/tweet4.png?raw=true "Alert Box")
 
 ---
